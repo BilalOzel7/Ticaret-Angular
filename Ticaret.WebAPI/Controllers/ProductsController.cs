@@ -5,8 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Ticaret.Data.DataContext;
-using Ticaret.Data.DbModels;
+using Ticaret.Core.DbModels;
+using Ticaret.Infrastructure.DataContext;
 
 namespace Ticaret.WebAPI.Controllers
 {

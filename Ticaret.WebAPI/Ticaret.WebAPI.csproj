@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ticaret.Data\Ticaret.Data.csproj" />
+    <ProjectReference Include="..\Ticaret.Infrastructure\Ticaret.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
