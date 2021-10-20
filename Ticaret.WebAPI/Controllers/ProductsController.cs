@@ -14,9 +14,8 @@ using Ticaret.WebAPI.Dtos;
 
 namespace Ticaret.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ProductsController : ControllerBase
+    
+    public class ProductsController : BaseApiController
     {
 
         private readonly IGenericRepository<Product> _productRepository;

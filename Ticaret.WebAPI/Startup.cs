@@ -15,7 +15,9 @@ using System.Threading.Tasks;
 using Ticaret.Core.Interfaces;
 using Ticaret.Infrastructure.DataContext;
 using Ticaret.Infrastructure.Implements;
+using Ticaret.WebAPI.Extensions;
 using Ticaret.WebAPI.Helpers;
+using Ticaret.WebAPI.Middleware;
 
 namespace Ticaret.WebAPI
 {
@@ -33,8 +35,7 @@ namespace Ticaret.WebAPI
         {
 
             services.AddControllers();
-            services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped(typeof(IGenericRepository<>),(typeof(GenericRepository<>)));
+            services.AddApplicationServices();
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddDbContext<StoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddSwaggerGen(c =>
@@ -52,6 +53,10 @@ namespace Ticaret.WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ticaret.WebAPI v1"));
             }
+
+            app.UseMiddleware<ExceptionMiddleware>();
+
+            app.UseStatusCodePagesWithReExecute("/error/{0}");
 
             app.UseHttpsRedirection();
 
