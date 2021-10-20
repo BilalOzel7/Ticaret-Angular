@@ -12,7 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ticaret.Core.Interfaces;
 using Ticaret.Infrastructure.DataContext;
+using Ticaret.Infrastructure.Implements;
 
 namespace Ticaret.WebAPI
 {
@@ -30,6 +32,7 @@ namespace Ticaret.WebAPI
         {
 
             services.AddControllers();
+            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddDbContext<StoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddSwaggerGen(c =>
             {
