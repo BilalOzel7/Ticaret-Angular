@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using Ticaret.Core.Interfaces;
 using Ticaret.Infrastructure.DataContext;
 using Ticaret.Infrastructure.Implements;
+using Ticaret.WebAPI.Helpers;
 
 namespace Ticaret.WebAPI
 {
@@ -33,6 +34,8 @@ namespace Ticaret.WebAPI
 
             services.AddControllers();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped(typeof(IGenericRepository<>),(typeof(GenericRepository<>)));
+            services.AddAutoMapper(typeof(MappingProfiles));
             services.AddDbContext<StoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddSwaggerGen(c =>
             {
