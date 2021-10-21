@@ -8,6 +8,8 @@ namespace Ticaret.Core.DbModels
 {
    public class Product:BaseEntity
     {
+
+        //https://github.com/ylmzertg/AngularE-Commerce.git
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public decimal? Price { get; set; }
