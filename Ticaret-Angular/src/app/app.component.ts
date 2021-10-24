@@ -10,14 +10,14 @@ import { IProduct } from './shared/models/IProduct';
 })
 export class AppComponent implements OnInit {
   title = 'Ticaret-Angular';
-  products:IProduct[];
-  constructor(private http:HttpClient){}
+  
+  constructor(){}
 
   ngOnInit():void {
-    this.http.get<IPagination>('https://localhost:44369/api/products').subscribe((response:IPagination)=>{
-     this.products=response.data;
-    },error=>{
-      console.log(error);
-    });
+    // this.http.get<IPagination>('https://localhost:44369/api/products').subscribe((response:IPagination)=>{
+    //  this.products=response.data;
+    // },error=>{
+    //   console.log(error);
+    // });
   }
 }

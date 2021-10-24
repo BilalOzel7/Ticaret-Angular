@@ -1,0 +1,7 @@
+.jumbotron
+{
+    background-image: url("/assets/images/bg.jpg");
+    background-size:cover;
+    height: 480px;
+    margin-bottom: 30px;
+}
