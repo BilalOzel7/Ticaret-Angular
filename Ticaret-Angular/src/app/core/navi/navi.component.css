@@ -11,3 +11,20 @@
     right:30px;
 
 }
+
+a{
+    text-decoration: none;
+    color:whitesmoke;
+}
+
+a.active{
+    color:orange;
+}
+
+.logo{
+    cursor:pointer;
+}
+
+.logo:focus{
+    outline: none;
+}

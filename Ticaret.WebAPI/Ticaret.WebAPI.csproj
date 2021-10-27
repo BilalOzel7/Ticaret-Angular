@@ -19,4 +19,19 @@
     <ProjectReference Include="..\Ticaret.Infrastructure\Ticaret.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\images\products\563_tacperde.jpg" />
+    <None Include="wwwroot\images\products\bg-4.jpg" />
+    <None Include="wwwroot\images\products\bg-5.jpg" />
+    <None Include="wwwroot\images\products\bg-6.jpg" />
+    <None Include="wwwroot\images\products\bg.jpg" />
+    <None Include="wwwroot\images\products\bg2.jpg" />
+    <None Include="wwwroot\images\products\bg3.png" />
+    <None Include="wwwroot\images\products\bg7.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Content\" />
+  </ItemGroup>
+
 </Project>
