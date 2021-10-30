@@ -1,0 +1,97 @@
+
+<div *ngIf="basket!=null" class="container mt-5">
+    <h3 class="container" style="margin-top:150px"><strong>Sepet İşlemleri</strong></h3>
+    <div class="pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 py-5 mb-1">
+                    <div class="table-responsive">
+                        <div class="table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="border-0 bg-light " scope="col">
+                                            <div class="p-2 px-5 text-uppercase">Ürünler</div>
+                                        </th>
+                                        <th scope="col" class="border-0 bg-light"  >
+                                            <div class="py-2 px-5 text-uppercase" style="margin-left: 5px;">Fiyat</div>
+                                        </th>
+                                        <th scope="col" class="border-0 bg-light"> 
+                                            <div class="py-2 px-5 text-uppercase">Adet</div>
+                                        </th>
+                                        <th scope="col" class="border-0 bg-light">
+                                            <div class="py-2 px-5 text-uppercase">Toplam </div>
+                                        </th>
+                                        <th scope="col" class="border-0 bg-light">
+                                            <div class="py-2 px-5 text-uppercase">Sil</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of basket.items">
+                                        <th scope="row" class="md-6">
+                                            <div class="p-8">
+                                                <img src="{{item.pictureUrl}}" alt="{{item.productName}}" class="img-fluid" style="height: 70px; width:120px;">
+                                                <div class="ml-2 d-inline-block align-middle">
+                                                    <h5 class="mb-0">
+                                                        <a routerLink="/shop/{{item.id}}" class="text-dark ml-3">{{item.productName}}</a>
+                                                    </h5>
+                                                    <span
+                                                        class="text-muted font-wight-normal font-italic d-block ml-3">Type: {{item.type}}</span>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td class="align-middle p-2 px-5" ><strong style="margin-left: 15px;">{{item.price | currency}}</strong></td>
+                                        <td class="align-middle ">
+                                            <div class="d-flex align-items-center">
+                                                <i (click)="decrementItemQuantity(item)" class="fa fa-minus-circle text-warning mr-2 "
+                                                    style="cursor:pointer; font-size: 2em; margin-left: 26px;"></i>
+                                                <span class="font-weight-bold" style="font-size: 1.5em;">{{item.quantity}}</span>
+                                                <i (click)="incrementItemQuantity(item)" class="fa fa-plus-circle text-warning mx-2"
+                                                    style="cursor: pointer; font-size: 2em;"></i>
+                                            </div>
+                                        </td>
+                                        <td class="align-middle">
+                                            <strong style="margin-left: 53px;">{{item.price * item.quantity |currency}}</strong>
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <a class="text-danger">
+                                                <i (click)="removeBasketItem(item)" class="fa fa-trash" style="font-size: 2em; cursor: pointer;"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 ">
+                    <app-order-totals>
+                    </app-order-totals>
+                    <a routerLink="/checkout" class="btn btn-outline-primary py-2 btn-block">
+                    <strong><b>Ödeme Yap</b></strong>
+                    </a>
+                </div>
+                <div class="col-6" style="margin-top:120px">
+                    <a href="" style="color:green"><i class="fa fa-whatsapp" style="font-size:40px; color:green"></i>
+                    <span><strong class="ml-2" style="font-size:20px;  padding:11px;">05525628707</strong> </span></a>
+                    <div>
+                        <strong>Whatsapp üzerinden sorularınızı sorabilir ve bilgi alabilirsiniz </strong>
+                    </div>
+                    <br>
+                   <a href="" > <i class="fa fa-instagram" style="font-size:40px;"> </i>
+                    <span><strong class="ml-2" style="font-size:20px;  padding:11px;">aydinmefrusat1977</strong> </span></a>
+                   <div>
+                    <strong>İnstagram sayfamızı ziyaret edebilirsiniz. </strong>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+ 

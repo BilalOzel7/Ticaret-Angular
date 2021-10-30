@@ -8,6 +8,7 @@ import { TestErrorComponent } from './test-error/test-error.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SectionHeaderComponent } from './section-header/section-header.component';
 import { BreadcrumbModule } from 'xng-breadcrumb';
+import { BasketComponent } from '../basket/basket.component';
 
 
 
@@ -16,7 +17,10 @@ import { BreadcrumbModule } from 'xng-breadcrumb';
      NaviComponent,
      NotFoundComponent,
      ServerErrorComponent, 
-     TestErrorComponent, SectionHeaderComponent],
+     TestErrorComponent, 
+     SectionHeaderComponent,
+ 
+    ],
   imports: [
     CommonModule,
     RouterModule,

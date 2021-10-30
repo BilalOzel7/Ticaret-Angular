@@ -50,13 +50,13 @@
           <div class="row mt-3"> 
                 <div class="col-md-12 d-flex justify-content-start align-items-center">
                     
-                        <i  class="fa fa-minus-circle text-warning mr-2" style="cursor:pointer; font-size: 2em;"></i>
-                        <span class="font-weight-bold" style="font-size: 1.5em;"></span>
-                        <i   class="fa fa-plus-circle text-warning mx-2" style="cursor: pointer; font-size: 2em;"></i>
+                        <i (click)="decrementQuantity()" class="fa fa-minus-circle text-warning mr-2" style="cursor:pointer; font-size: 2em;"></i>
+                        <span class="font-weight-bold" style="font-size: 1.5em;">{{quantity}}</span>
+                        <i (click)="incrementQuantity()"  class="fa fa-plus-circle text-warning mx-2" style="cursor: pointer; font-size: 2em;"></i>
                         
                     
-                    <button class="btn btn-success">
-                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                    <button class="btn btn-success"  (click)="addItemToBasket()">
+                        <i  class="fa fa-cart-plus" aria-hidden="true"></i>
                         Sepete Ekle</button>
                      
                 </div>  
@@ -90,7 +90,25 @@
 </div>
 </div>
 </div>
+        </div> 
+    </div>
+    <div class="col-12" style="margin-top:50px;margin-bottom: 50px;">
+        <div class="row">
+            <div>
+        <a href="" style="color:green"><i class="fa fa-whatsapp" style="font-size:40px; color:green"></i>
+        <span><strong class="ml-2" style="font-size:20px;  padding:11px;">05525628707</strong> </span></a>
+        <div>
+            <strong>Whatsapp üzerinden sorularınızı sorabilir ve bilgi alabilirsiniz </strong>
         </div>
+    </div>
+        <div style="margin-left:200px">
+       <a href="" > <i class="fa fa-instagram" style="font-size:40px;"> </i>
+        <span><strong class="ml-2" style="font-size:20px;  padding:11px;">aydinmefrusat1977</strong> </span></a>
+       <div>
+        <strong>İnstagram sayfamızı ziyaret edebilirsiniz. </strong>
+       </div>
+    </div>
+    </div>
     </div>
 
 </div>

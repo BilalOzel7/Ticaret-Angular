@@ -39,6 +39,7 @@ namespace Ticaret.WebAPI
             services.AddApplicationServices();
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddDbContext<StoreContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddIdentityServices(Configuration);
             services.AddSingleton<IConnectionMultiplexer>(x =>
             {
                 var configuration = ConfigurationOptions.Parse(Configuration.GetConnectionString("Redis"), true);
@@ -80,6 +81,7 @@ namespace Ticaret.WebAPI
 
             app.UseCors("CorsPolicy");
 
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
