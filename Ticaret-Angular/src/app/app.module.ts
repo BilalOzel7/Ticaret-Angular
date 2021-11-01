@@ -12,6 +12,7 @@ import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { BreadcrumbModule } from 'xng-breadcrumb';
 import { BasketModule } from './basket/basket.module';
 import { CheckoutModule } from './checkout/checkout.module';
+import { AccountModule } from './account/account.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CheckoutModule } from './checkout/checkout.module';
     HomeModule,
     BreadcrumbModule,
     BasketModule,
-    CheckoutModule
+    CheckoutModule,
+    AccountModule,
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true}

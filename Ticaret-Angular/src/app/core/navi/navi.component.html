@@ -47,10 +47,33 @@
      <div class="d-flex align-items-center">
          <a routerLink="/basket" class="position-relative">
              <i class="fa fa-shopping-cart fa-2x mr-5 text-white"></i>
-             <div *ngIf="(basket$ | async) as basket" class="cart-no">{{basket.items.length}}</div>
+             <div *ngIf="(basket$ | async) as basket" class="cart-no">{{(basket$ | async).items.length}}</div>
          </a>
-         <a class="btn btn-outline-success mr-2">Login</a>
-         <a class="btn btn-outline-danger mr-3">Sign Up</a>
+         <ng-container *ngIf="(currentUser$ | async)===null">
+          <a routerLink="/login" class="btn btn-outline-success mr-2">Login</a>
+         <a routerLink="/register" class="btn btn-outline-danger mr-3">Sign Up</a>
+         </ng-container>
+
+         <ng-container *ngIf="currentUser$ | async">
+          <div class="dropdown ml-3 mr-3" dropdown>
+            <a class="dropdown-toggle" style="cursor: pointer;" dropdownToggle>
+                <strong>Hoşgeldin {{(currentUser$ | async).displayName}}</strong>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" style="cursor: pointer;" *dropdownMenu>
+              <a routerLink="/basket" class="dropdown-item d-flex align-items-center py-2">
+                <i class="fa fa-shopping-cart mr-3" style="color: black;"><strong style="margin-left: 8px;">Sepete Git</strong> </i>
+              </a>
+              <a routerLink="/orders" class="dropdown-item d-flex align-items-center py-2">
+                <i class="fa fa-history mr-3" style="color: black"><strong style="margin-left: 8px;">View Orders</strong> </i>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a (click)="logout()" class="dropdown-item d-flex align-items-center py-2">
+                <i class="fa fa-sign-out mr-3" style="color: black"><strong style="margin-left: 8px;">Çıkış Yap</strong> </i>
+              </a>
+            </div>
+          </div>
+         </ng-container>
+         
      </div>
      
   </div>
