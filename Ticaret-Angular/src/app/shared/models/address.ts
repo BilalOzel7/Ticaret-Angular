@@ -1,4 +1,4 @@
-export class IAdsress {
+export class IAddress {
     firstName: string;
     lastName: string
     street: string;

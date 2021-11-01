@@ -13,6 +13,7 @@ import { BreadcrumbModule } from 'xng-breadcrumb';
 import { BasketModule } from './basket/basket.module';
 import { CheckoutModule } from './checkout/checkout.module';
 import { AccountModule } from './account/account.module';
+import { JWTInterceptor } from './core/interceptors/jwt.interceptors';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AccountModule } from './account/account.module';
     AccountModule,
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true}
+    {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true},
+    {provide:HTTP_INTERCEPTORS,useClass:JWTInterceptor,multi:true}
   ],
   bootstrap: [AppComponent]
 })
