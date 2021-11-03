@@ -1,39 +1,39 @@
 <div class="mt-4" [formGroup]="checkoutForm">
    <div class="d-flex justify-content-between align-items-center">
-       <h4>Shipping Address </h4>
+       <h4>Alışveriş Adresi </h4>
        <button (click)="saveUserAddress()" 
        [disabled]="!checkoutForm.get('addressForm').valid || checkoutForm.get('addressForm').dirty"
        class="btn btn-outline-success">
-           Save as default address
+           Adresim olarak kaydet
        </button>
    </div>
    <br>
    <div class="row" formGroupName="addressForm">
       <div class="form-group col-6">
-          <app-text-input [label]="'First Name'" formControlName="firstName"></app-text-input>
+          <app-text-input [label]="'İsim'" formControlName="firstName"></app-text-input>
       </div>
       <div class="form-group col-6">
-        <app-text-input [label]="'Last Name'" formControlName="lastName"></app-text-input>
+        <app-text-input [label]="'Soyisim'" formControlName="lastName"></app-text-input>
       </div>
       <div class="form-group col-6">
-        <app-text-input [label]="'Street'" formControlName="street"></app-text-input>
+        <app-text-input [label]="'Cadde ve Sokak'" formControlName="street"></app-text-input>
       </div>
       <div class="form-group col-6">
-        <app-text-input [label]="'City'" formControlName="city"></app-text-input>
+        <app-text-input [label]="'Şehir'" formControlName="city"></app-text-input>
       </div>
       <div class="form-group col-6">
-        <app-text-input [label]="'State'" formControlName="state"></app-text-input>
+        <app-text-input [label]="'Ülke Kodu'" formControlName="state"></app-text-input>
       </div>
       <div class="form-group col-6">
-        <app-text-input [label]="'Zip Code'" formControlName="zipCode"></app-text-input>
+        <app-text-input [label]="'Posta Kodu'" formControlName="zipCode"></app-text-input>
       </div>
    </div>
 </div>
 <div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
     <button class="btn btn-outline-primary" routerLink="/basket">
-      <i class="fa fa-angle-left"></i> Back to Basket
+      <i class="fa fa-angle-left"></i> Sepete Dön
     </button>
     <button class="btn btn-primary" cdkStepperNext>
-       Go to Delivery  <i class="fa fa-angle-right"></i>
+       Teslimata Git  <i class="fa fa-angle-right"></i>
       </button>
 </div>

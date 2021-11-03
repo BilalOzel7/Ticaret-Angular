@@ -1,10 +1,10 @@
-
-<div class="d-flex justify-content-center " style="margin-top: 250px;">
+<div class="cover">
+<div class="d-flex justify-content-center " style="padding-top: 250px;">
   <div class="col-3">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <h1 class="h3 mb-3 fw-normal" style="text-align:center">Giriş Yap</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="form">
+      <h1 class="h3 mb-3 fw-normal" style="text-align:center; font-weight:bold;padding-top:20px;">Giriş Yap</h1>
       <div class="form-floating">
-        <label for="floatingInput">Email Address</label>
+        <label class="label" for="floatingInput">Email Address</label>
         <input
           formControlName="email"
           type="email"
@@ -21,7 +21,7 @@
         
       </div>
       <div class="form-floating">
-        <label for="floatingPassword">Password</label>
+        <label class="label" for="floatingPassword">Password</label>
         <input
         formControlName="password"
           type="password"
@@ -35,10 +35,11 @@
       </div>
 
       <br>
-      <button [disabled]="loginForm.invalid" class="w-100 btn btn-lg btn-primary btn-block" type="submit">
+      <button [disabled]="loginForm.invalid" class=" btn btn-lg btn-primary btn-block" style="width: 150px;margin-left: 100px;" type="submit">
         Giriş Yap
       </button>
-      <p class="mt-5 mb-3 text-muted" style="text-align:center">© Aydın Mefruşat 1977</p>
+      <p class="mt-5 mb-3 text-muted" style="text-align:center;color:black;font-weight:bold;padding-bottom:20px;" >© Aydın Mefruşat 1977</p>
     </form>
   </div>
+</div>
 </div>

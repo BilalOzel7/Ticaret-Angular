@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { BasketService } from 'src/app/basket/basket.service';
 import { IBasket } from 'src/app/shared/models/basket';
-import { IOrder, IOrderItem, IOrderToCreate } from 'src/app/shared/models/order';
+import { IOrder, IOrderToCreate,} from 'src/app/shared/models/order';
 import { CheckoutService } from '../checkout.service';
 
 declare var Stripe: any;
@@ -62,7 +62,7 @@ cardHandler=this.onChange.bind(this);
   submitOrder(){
     const basket=this.basketService.getCurrentBasketValue();
     const orderToCreate=this.getOrderToCreate(basket);
-    this.checkoutService.createOrder(orderToCreate).subscribe((order:IOrderToCreate)=>{
+    this.checkoutService.createOrder(orderToCreate).subscribe((order:any)=>{
      
       this.stripe.confirmCardPayment(basket.clientSecret,{
         payment_method:{

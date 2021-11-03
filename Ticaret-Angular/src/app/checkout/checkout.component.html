@@ -3,21 +3,21 @@
   <div class="row">
     <div class="col-8">
         <app-stepper [linearModeSelected]="false" #appStepper>
-            <cdk-step [label]="'Address'">
+            <cdk-step [label]="'Adres'">
                 <app-checkout-address [checkoutForm]="checkoutForm"></app-checkout-address>
             </cdk-step>
-            <cdk-step [label]="'Delivery'">
+            <cdk-step [label]="'Teslimat'">
                 <app-checkout-delivery [checkoutForm]="checkoutForm"></app-checkout-delivery>
             </cdk-step>
-            <cdk-step [label]="'Review'">
+            <cdk-step [label]="'Ön İzleme'">
                 <app-checkout-review [appstepper]="appStepper"></app-checkout-review>
             </cdk-step>
-            <cdk-step [label]="'Payment'">
+            <cdk-step [label]="'Ödeme'">
                 <app-checkout-payment [checkoutForm]="checkoutForm"></app-checkout-payment>
             </cdk-step>
         </app-stepper>
     </div>
-    <div class="col-4">
+    <div class="col-4" style="margin-top:150px">
       <app-order-totals></app-order-totals>
     </div>
   </div>

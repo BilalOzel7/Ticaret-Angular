@@ -2,7 +2,7 @@
   <div class="row">
     <div class="form-group col-12" formGroupName="paymentForm">
       <app-text-input
-        [label]="'Name On Card'"
+        [label]="'Kart Üzerindeki İsim'"
         formControlName="nameOnCard"
       ></app-text-input>
     </div>
@@ -26,9 +26,9 @@
   class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5"
 >
   <button class="btn btn-outline-primary" cdkStepperPrevious>
-    <i class="fa fa-angle-left"></i> Back to Review
+    <i class="fa fa-angle-left"></i> Ön İzlemeye Dön
   </button>
-  <button class="btn btn-primary" (click)="submitOrder()">
-    Submit Order <i class="fa fa-angle-right"></i>
+  <button class="btn btn-primary" (click)="submitOrder()" >
+    Ödeme Yap <i class="fa fa-angle-right"  ></i>
   </button>
 </div>
